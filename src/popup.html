@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesetraining TTS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 320px;
+      padding: 15px;
+      margin: 0;
+    }
+    
+    h1 {
+      font-size: 16px;
+      margin-top: 0;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 5px;
+      color: #4285F4;
+    }
+    
+    .settings-group {
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      padding: 12px;
+      border-radius: 5px;
+    }
+    
+    .settings-header {
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 12px;
+      color: #333;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 13px;
+    }
+    
+    .slider-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    input[type="range"] {
+      flex: 1;
+    }
+    
+    .value {
+      width: 30px;
+      text-align: right;
+      margin-left: 10px;
+      font-size: 13px;
+    }
+    
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background: #4285F4;
+      color: white;
+      transition: background 0.2s;
+    }
+    
+    button:hover {
+      background: #3367d6;
+    }
+    
+    button#stop {
+      background: #ea4335;
+    }
+    
+    button#stop:hover {
+      background: #d62516;
+    }
+    
+    .mode-buttons {
+      display: flex;
+      margin-bottom: 15px;
+      justify-content: space-between;
+    }
+    
+    .mode-button {
+      flex: 1;
+      margin: 0 5px;
+      padding: 8px 5px;
+      text-align: center;
+      background: #ebebeb;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #333;
+      font-size: 13px;
+    }
+    
+    .mode-button.active {
+      background: #4285F4;
+      color: white;
+    }
+    
+    .mode-button:first-child {
+      margin-left: 0;
+    }
+    
+    .mode-button:last-child {
+      margin-right: 0;
+    }
+    
+    .instructions {
+      font-size: 12px;
+      color: #666;
+      margin-top: 15px;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lesetraining TTS</h1>
+  
+  <div class="settings-group">
+    <div class="settings-header">Lesemodus</div>
+    <div class="mode-buttons">
+      <button id="syllable-mode" class="mode-button active">Silben</button>
+      <button id="word-mode" class="mode-button">Wörter</button>
+      <button id="bionic-mode" class="mode-button">Bionic</button>
+    </div>
+  </div>
+  
+  <div class="settings-group">
+    <div class="settings-header">Geschwindigkeiten</div>
+    
+    <label for="defaultSpeed">Standard:</label>
+    <div class="slider-container">
+      <input type="range" id="defaultSpeed" min="0.5" max="2" step="0.1" value="1.0">
+      <span class="value" id="defaultSpeedValue">1.0</span>
+    </div>
+    
+    <label for="slowSpeed">Langsam:</label>
+    <div class="slider-container">
+      <input type="range" id="slowSpeed" min="0.1" max="1" step="0.1" value="0.7">
+      <span class="value" id="slowSpeedValue">0.7</span>
+    </div>
+    
+    <label for="fastSpeed">Schnell:</label>
+    <div class="slider-container">
+      <input type="range" id="fastSpeed" min="1" max="3" step="0.1" value="1.5">
+      <span class="value" id="fastSpeedValue">1.5</span>
+    </div>
+  </div>
+  
+  <div class="buttons">
+    <button id="read">Text vorlesen</button>
+    <button id="stop">Stoppen</button>
+  </div>
+  
+  <div class="instructions">
+    <p>Markiere Text auf einer Webseite und klicke auf "Text vorlesen" oder benutze das Kontextmenü. Du kannst zwischen Silben-, Wort- und Bionic-Lesemodus wechseln.</p>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

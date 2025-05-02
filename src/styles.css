@@ -1,0 +1,154 @@
+﻿/* Allgemeine Überlayformatierung */
+#tts-reader-overlay {
+  font-family: Arial, sans-serif;
+  color: #333;
+  transition: all 0.3s ease;
+  z-index: 2147483647;
+}
+
+.tts-content {
+  line-height: 1.6;
+  margin-top: 10px;
+  background: white;
+  padding: 18px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Verbesserte Silben-Hervorhebung ohne störende Hintergründe */
+.word-container {
+  display: inline-block;
+  margin: 0 2px;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.syllable {
+  display: inline-block;
+  transition: all 0.2s ease;
+  padding: 0;
+  border-radius: 0;
+  position: relative;
+}
+
+/* Worthervorhebung: subtiler Unterstrich */
+.syllable.current-word {
+  color: #2070d0; /* Blaue Textfarbe für das aktuelle Wort */
+  text-decoration: underline;
+  text-decoration-color: rgba(32, 112, 208, 0.3);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Erste Silbe im Wort fett */
+.syllable.current-word[data-syllableInWord="0"] {
+  font-weight: 600;
+}
+
+/* Aktive Silbenhervorhebung */
+.syllable.active {
+  color: #d02070; /* Kontrastierende Farbe für die aktuelle Silbe */
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(208, 32, 112, 0.5);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Kein Hintergrund mehr */
+.syllable.current-word, 
+.syllable.active {
+  background-color: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Verstecke Silbentrenner */
+.syllable-separator {
+  opacity: 0;
+  width: 0;
+}
+
+/* Wortmodus-Formatierung */
+.word {
+  display: inline-block;
+  padding: 2px 0;
+  transition: all 0.2s ease;
+}
+
+.word.active {
+  color: #2070d0;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(32, 112, 208, 0.5);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Bionic Reading-Formatierung */
+.bionic-word {
+  display: inline;
+  padding: 2px 0;
+  transition: all 0.2s ease;
+}
+
+.bionic-word.active {
+  color: #2070d0;
+  text-decoration: underline;
+  text-decoration-color: rgba(32, 112, 208, 0.5);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.bionic-word strong {
+  font-weight: 700;
+  color: #000;
+}
+
+/* Steuerelemente */
+.tts-controls {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.tts-controls button {
+  margin-left: 10px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  background: #ebebeb;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tts-controls button:hover {
+  background: #e0e0e0;
+}
+
+.tts-controls .mode-btn {
+  font-size: 0.9em;
+  padding: 5px 8px;
+}
+
+.tts-controls .mode-btn.active {
+  background: #4285F4;
+  color: white;
+}
+
+.tts-controls .close-btn {
+  background: transparent;
+  font-size: 1.2em;
+  padding: 0 8px;
+}
+
+.tts-controls .close-btn:hover {
+  background: #f0f0f0;
+}
+
+.tts-controls input[type="range"] {
+  width: 120px;
+  margin: 0 10px 0 5px;
+  vertical-align: middle;
+}
