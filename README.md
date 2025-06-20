@@ -25,9 +25,9 @@ Jeden, der seine Lesegeschwindigkeit verbessern möchte
 
 Einfach Text auf einer Webseite markieren und mit einem Klick vorlesen lassen!
 
-Im Edge Store:Lesetraining TTS – Microsoft Edge Addons
+Im Edge Store: <a href = "https://microsoftedge.microsoft.com/addons/detail/lesetraining-tts/lhflphpcnaejeojggpdodeabeppopggl">Lesetraining TTS – Microsoft Edge Addons</a>
 
-Google Chrome: Lesetraining TTS - Chrome Web Store
+Google Chrome: <a href ="https://chromewebstore.google.com/detail/lesetraining-tts/ffihalipnneamfdhmfkeigjbglehjgdp">Lesetraining TTS - Chrome Web Store</a>
 
 <a href="https://paypal.me/geopiw"
    target="_blank"
